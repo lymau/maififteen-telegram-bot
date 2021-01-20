@@ -86,12 +86,21 @@ def bbkp(update, context):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('img/bbkpnyahyung.png', 'rb'))
     context.bot.send_video(chat_id=update.effective_chat.id, video=open('img/bbkp_video.mp4', 'rb'), supports_streaming=True)
 
+# Feed the group with updated information
+def feed(update, context):
+    context.bot.forward_message(chat_id='-1001450609120',
+                        from_chat_id=update.message.chat_id,
+                        message_id=update.message.message_id)
+
 def main():
     """Start the bot."""
     updater = Updater(TOKEN, use_context=True)
 
     # Get the dispatcher to register handlers
     dp = updater.dispatcher
+
+    # main function
+    dp.add_handler(CommandHandler('feed', feed))
 
     # on different commands - answer in Telegram
     dp.add_handler(CommandHandler('start', start))
