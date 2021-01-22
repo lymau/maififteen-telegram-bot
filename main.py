@@ -81,6 +81,10 @@ def idx(update, context):
 def ngaca(update, context):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('img/ngaca.png', 'rb'))
 
+# Send ngaca
+def temlat(update, context):
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('img/cheems.png', 'rb'))   
+
 # Send cursed bbkp
 def bbkp(update, context):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('img/bbkpnyahyung.png', 'rb'))
@@ -108,6 +112,7 @@ def main():
     dp.add_handler(CommandHandler('idx', idx))
 
     # bonus commands
+    dp.add_handler(CommandHandler('temlat', temlat))
     dp.add_handler(CommandHandler('ngaca', ngaca))
     dp.add_handler(CommandHandler('bbkp', bbkp))
     dp.add_handler(CommandHandler('doa', doa))
