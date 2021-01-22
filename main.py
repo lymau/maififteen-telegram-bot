@@ -83,7 +83,7 @@ def ngaca(update, context):
 
 # Send ngaca
 def temlat(update, context):
-    context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('img/cheems.png', 'rb'))   
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('img/cheems.jpg', 'rb'))   
 
 # Send cursed bbkp
 def bbkp(update, context):
