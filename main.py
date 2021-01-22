@@ -86,6 +86,11 @@ def bbkp(update, context):
     context.bot.send_photo(chat_id=update.effective_chat.id, photo=open('img/bbkpnyahyung.png', 'rb'))
     context.bot.send_video(chat_id=update.effective_chat.id, video=open('img/bbkp_video.mp4', 'rb'), supports_streaming=True)
 
+# Send dhuaa
+def doa(update, context):
+    caption = "بِسْمِ اللّهِ الرَّحْمَنِ الرَّحِيْ\n\nSemoga hari ini profit maksimal dan loss minimal. \n\nامين"
+    context.bot.send_message(parse_mode=ParseMode.HTML, chat_id=update.effective_chat.id, text=caption)
+
 def main():
     """Start the bot."""
     updater = Updater(TOKEN, use_context=True)
@@ -105,6 +110,7 @@ def main():
     # bonus commands
     dp.add_handler(CommandHandler('ngaca', ngaca))
     dp.add_handler(CommandHandler('bbkp', bbkp))
+    dp.add_handler(CommandHandler('doa', doa))
 
     # on noncommand i.e message - echo the message on Telegram
     dp.add_handler(MessageHandler(Filters.text, echo))
